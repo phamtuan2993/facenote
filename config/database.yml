@@ -1,3 +1,5 @@
+
+
 development:
   adapter: postgresql
   encoding: unicode
@@ -19,6 +21,11 @@ test:
   password: <%= ENV["DATABASE_PWD"] || 'postgres' %>
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  poll: 5
+  adapter: <%= ENV["adapter"] %>
+  encoding: <%= ENV['encoding'] %>
+  host: <%= ENV["host"] %>
+  port: <%= ENV["port"] %>
+  username:  <%= ENV["username"] %>
+  password:  <%= ENV["password"] %>
+  database: <%= ENV["database"] %>
+  poll: <%= ENV["poll"] %>
